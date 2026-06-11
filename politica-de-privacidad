@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de Privacidad — bdai.travel</title>
+  <meta name="robots" content="index, follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black:   #0a0a12;
+      --deep:    #0f0f1e;
+      --card:    #13132a;
+      --purple:  #6c3fc5;
+      --purple-2:#9b59f5;
+      --yellow:  #f5c518;
+      --text:    #ffffff;
+      --text-2:  #c8c8e8;
+      --text-3:  #7878a8;
+      --border:  rgba(108,63,197,0.2);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--black);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* NAV */
+    nav {
+      background: var(--deep);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+    }
+    .nav-logo svg { width: 28px; height: 28px; }
+    .nav-logo-text {
+      font-weight: 800;
+      font-size: 1.15rem;
+      color: var(--text);
+    }
+    .nav-back {
+      font-size: 0.82rem;
+      color: var(--text-3);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--text); }
+
+    /* CONTENT */
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    .page-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--purple-2);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    h1 {
+      font-weight: 900;
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+    h1 span { color: var(--yellow); }
+
+    .updated {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--text-3);
+      letter-spacing: 0.1em;
+      margin-bottom: 3rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-block {
+      margin-bottom: 2.5rem;
+    }
+
+    h2 {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--purple-2);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+      padding-left: 0.75rem;
+      border-left: 3px solid var(--purple);
+    }
+
+    p {
+      font-size: 0.92rem;
+      color: var(--text-2);
+      line-height: 1.75;
+      margin-bottom: 0.5rem;
+    }
+
+    ul {
+      padding-left: 1.25rem;
+      margin-top: 0.4rem;
+    }
+    li {
+      font-size: 0.92rem;
+      color: var(--text-2);
+      line-height: 1.7;
+      margin-bottom: 0.4rem;
+    }
+    li strong { color: var(--text); font-weight: 600; }
+
+    a { color: var(--purple-2); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .contact-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin-top: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .contact-box .icon {
+      width: 42px; height: 42px;
+      border-radius: 12px;
+      background: rgba(108,63,197,0.2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    .contact-box p { margin: 0; font-size: 0.88rem; }
+    .contact-box strong { color: var(--text); display: block; font-size: 0.82rem; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.05em; margin-bottom: 0.2rem; }
+
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 2.5rem 0;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--deep);
+      border-top: 1px solid var(--border);
+      padding: 1.5rem 2rem;
+      text-align: center;
+    }
+    .footer-text {
+      font-size: 0.78rem;
+      color: var(--text-3);
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .footer-text a { color: var(--purple-2); }
+
+    @media (max-width: 600px) {
+      main { padding: 2rem 1.25rem 4rem; }
+      nav { padding: 0.9rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="https://www.bdai.travel" class="nav-logo">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 375">
+      <defs><clipPath id="p1"><path d="M93.621094 117.652344H281.378906V305.40625H93.621094z" clip-rule="nonzero"/></clipPath><clipPath id="p2"><path d="M187.5 117.652344c-51.847656 0-93.878906 42.03125-93.878906 93.875C93.621094 263.375 135.652344 305.40625 187.5 305.40625c51.847656 0 93.878906-42.03125 93.878906-93.878906 0-51.84375-42.03125-93.875-93.878906-93.875z" clip-rule="nonzero"/></clipPath><clipPath id="p3"><path d="M.621094.652344H188.378906V188.40625H.621094z" clip-rule="nonzero"/></clipPath><clipPath id="p4"><path d="M94.5.652344C42.652344.652344.621094 42.683594.621094 94.527344.621094 146.375 42.652344 188.40625 94.5 188.40625c51.847656 0 93.878906-42.03125 93.878906-93.878906C188.378906 42.683594 146.347656.652344 94.5.652344z" clip-rule="nonzero"/></clipPath><clipPath id="p5"><path d="M0 0h189v189H0z"/></clipPath><clipPath id="p6"><path d="M93.625 69.734375H158.875V266.984375H93.625z" clip-rule="nonzero"/></clipPath><clipPath id="p7"><path d="M151.710938 143.445312H187.710938V238.695312H151.710938z" clip-rule="nonzero"/></clipPath><clipPath id="p8"><path d="M2 1H36.710938V94H2z" clip-rule="nonzero"/></clipPath><clipPath id="p9"><path d="M.992188.445312H36.710938V95.695312H.992188z" clip-rule="nonzero"/></clipPath><clipPath id="p10"><path d="M0 0h37v96H0z"/></clipPath><clipPath id="p11"><path d="M187.363281 185H221V278H187.363281z" clip-rule="nonzero"/></clipPath><clipPath id="p12"><path d="M187.363281 184.347656H222.730469V279.597656H187.363281z" clip-rule="nonzero"/></clipPath></defs>
+      <g clip-path="url(#p1)"><g clip-path="url(#p2)"><g transform="translate(93 117)"><g clip-path="url(#p5)"><g clip-path="url(#p3)"><g clip-path="url(#p4)"><path fill="#f6c604" d="M.621094.652344H188.378906V188.40625H.621094z"/></g></g></g></g></g></g>
+      <g clip-path="url(#p6)"><path fill="#f6c604" d="M93.625 69.691406v131.816406c0 36.105469 29.269531 65.375 65.378906 65.375V135.070312c0-36.109374-29.273437-65.378906-65.378906-65.378906z"/></g>
+      <g clip-path="url(#p7)"><g transform="translate(151 143)"><g clip-path="url(#p10)"><g clip-path="url(#p8)"><path fill="#5e17eb" d="M36.851562 93.628906C42.523438 91.140625 70.75 54.609375 70.75 35.789062 70.75 16.832031 55.808594 1.886719 36.851562 1.886719 17.890625 1.886719 2.949219 17.109375 2.949219 36.34375c0 18.679688 28.226562 54.796875 33.902343 57.285156z"/></g><g clip-path="url(#p9)"><path fill="#5e17eb" d="M36.851562 3.960938C19 3.960938 5.023438 18.214844 5.023438 36.34375c0 7.472656 5.257812 19.511719 14.390624 33.210938C26.75 80.761719 33.804688 88.648438 36.851562 91.140625c2.902344-2.492187 10.097657-10.378906 17.433594-21.726563C63.417969 55.4375 68.675781 43.261719 68.675781 35.789062 68.675781 17.9375 54.699219 3.960938 36.851562 3.960938m0-4.148438C57.050781-.1875 72.828125 15.585938 72.828125 35.789062c0 20.203126-31.136719 59.917969-35.976563 59.917969-4.84375 0-35.980468-39.160156-35.980468-59.363281C.871094 16.140625 16.648438-.1875 36.851562-.1875z"/></g></g></g></g>
+      <g clip-path="url(#p11)"><path fill="#5e17eb" d="M186.871094 277.535156C181.199219 275.042969 152.96875 238.511719 152.96875 219.695312c0-18.960937 14.945312-33.902343 33.902344-33.902343 18.957031 0 33.902344 15.21875 33.902344 34.453125 0 18.683593-28.226563 54.796874-33.902344 57.289062z"/></g>
+      <g clip-path="url(#p12)"><path fill="#5e17eb" d="M186.871094 187.867188c17.851562 0 31.828125 14.253906 31.828125 32.378906 0 7.472656-5.257813 19.511718-14.390625 33.210937-7.335938 11.207031-14.390625 19.097657-17.4375 21.585938-2.90625-2.492188-10.101563-10.378907-17.433594-21.722657C160.304688 239.34375 155.046875 227.164062 155.046875 219.695312c0-17.851562 13.976563-31.828124 31.824219-31.828124m0-4.152344c-20.203125 0-35.976563 15.777344-35.976563 35.980468 0 20.199219 31.132813 59.914063 35.976563 59.914063 4.84375 0 35.980468-39.160156 35.980468-59.363281 0-20.203125-15.777343-36.53125-35.980468-36.53125z"/></g>
+    </svg>
+    <span class="nav-logo-text">bdai</span>
+  </a>
+  <a href="https://www.bdai.travel" class="nav-back">
+    ← Volver a bdai.travel
+  </a>
+</nav>
+
+<main>
+  <div class="page-eyebrow">Legal</div>
+  <h1>Política de<br><span>Privacidad</span></h1>
+  <div class="updated">Última actualización: junio de 2026 · bdai.travel</div>
+
+  <div class="section-block">
+    <h2>1. Responsable del tratamiento</h2>
+    <p>En cumplimiento del Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD), se informa al usuario:</p>
+    <div class="contact-box">
+      <div class="icon">👤</div>
+      <div>
+        <strong>Responsable</strong>
+        <p>Daysi Chong Zambrano · NIF: 16648955Z<br>
+        Contacto: <a href="mailto:info@bdai.travel">info@bdai.travel</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <h2>2. Datos que recogemos</h2>
+    <ul>
+      <li><strong>Email</strong> — si creas cuenta o completas el pasaporte virtual.</li>
+      <li><strong>Datos del pasaporte</strong> — nombre, apellidos, fecha de nacimiento, ciudad, foto de perfil y nombre de usuario (@nomad ID), introducidos voluntariamente.</li>
+      <li><strong>Preferencia de idioma</strong> — el idioma seleccionado para los tours, almacenado localmente y en Supabase.</li>
+      <li><strong>Geolocalización</strong> — solo durante el uso activo del tour, para el check-in GPS a menos de 50 metros de cada parada. No se procesa en segundo plano.</li>
+      <li><strong>Datos de conexión</strong> — almacenados en Supabase (sesión, marcas de tiempo). Máximo 12 meses.</li>
+      <li><strong>Pasaporte virtual y ranking</strong> — visados digitales obtenidos, millas acumuladas, rango (de ZERO a ZENITH) e insignias por categoría. Guardados en el dispositivo y sincronizados en Supabase.</li>
+    </ul>
+  </div>
+
+  <div class="section-block">
+    <h2>3. Finalidad del tratamiento</h2>
+    <p>Los datos se utilizan exclusivamente para prestar el servicio: activar el audio por geolocalización, gestionar el pasaporte y ranking global, mostrar insignias y visados, y mejorar la experiencia mediante estadísticas técnicas agregadas.</p>
+    <p>No se venden datos. Sin publicidad. Sin cesión a terceros con fines comerciales.</p>
+  </div>
+
+  <div class="section-block">
+    <h2>4. Base jurídica</h2>
+    <ul>
+      <li>Ejecución del servicio — art. 6.1.b RGPD</li>
+      <li>Consentimiento para geolocalización y datos del pasaporte — art. 6.1.a RGPD</li>
+      <li>Interés legítimo para logs de seguridad — art. 6.1.f RGPD</li>
+    </ul>
+  </div>
+
+  <div class="section-block">
+    <h2>5. Cookies y almacenamiento local</h2>
+    <p>La aplicación utiliza almacenamiento local del dispositivo (localStorage) para guardar la preferencia de idioma y el progreso del tour. No se utilizan cookies de seguimiento publicitario ni herramientas de analítica de terceros.</p>
+    <p>Las cookies técnicas estrictamente necesarias para el funcionamiento del servicio se activan sin necesidad de consentimiento previo (art. 22.2 LSSI).</p>
+  </div>
+
+  <div class="section-block">
+    <h2>6. Proveedores y transferencias</h2>
+    <ul>
+      <li><strong>Supabase, Inc.</strong> — proveedor de base de datos y autenticación, actúa como encargado del tratamiento bajo RGPD con cláusulas contractuales tipo aprobadas por la Comisión Europea.</li>
+      <li><strong>Google LLC</strong> — distribución en Google Play. Actúa como distribuidor independiente bajo sus propias políticas.</li>
+    </ul>
+    <p>Ningún proveedor usa los datos del usuario con fines publicitarios.</p>
+  </div>
+
+  <div class="section-block">
+    <h2>7. Conservación de datos</h2>
+    <ul>
+      <li><strong>Datos de cuenta y pasaporte</strong> — mientras la cuenta esté activa o hasta que el usuario solicite su eliminación.</li>
+      <li><strong>Datos de conexión (Supabase)</strong> — máximo 12 meses.</li>
+      <li><strong>Datos locales en el dispositivo</strong> — hasta que el usuario desinstale la app o los elimine manualmente.</li>
+    </ul>
+  </div>
+
+  <div class="section-block">
+    <h2>8. Derechos del usuario</h2>
+    <p>El usuario puede ejercer en cualquier momento, de forma gratuita:</p>
+    <ul>
+      <li><strong>Acceso</strong> — conocer qué datos se tratan.</li>
+      <li><strong>Rectificación</strong> — corregir datos inexactos.</li>
+      <li><strong>Supresión</strong> — solicitar la eliminación de sus datos.</li>
+      <li><strong>Portabilidad</strong> — recibir los datos en formato estructurado.</li>
+      <li><strong>Oposición y limitación</strong> — en los supuestos previstos por el RGPD.</li>
+      <li><strong>Retirar el consentimiento</strong> — en cualquier momento, sin efecto retroactivo.</li>
+    </ul>
+    <div class="contact-box">
+      <div class="icon">✉️</div>
+      <div>
+        <strong>Ejercer derechos</strong>
+        <p>Escribe a <a href="mailto:info@bdai.travel">info@bdai.travel</a> indicando el derecho que deseas ejercer. Respuesta en máximo 30 días naturales.</p>
+      </div>
+    </div>
+    <p style="margin-top:1rem; font-size:0.85rem; color:var(--text-3)">Puedes presentar reclamación ante la <a href="https://www.aepd.es" target="_blank">Agencia Española de Protección de Datos (AEPD)</a>.</p>
+  </div>
+
+  <div class="section-block">
+    <h2>9. Menores de edad</h2>
+    <p>Los menores de 14 años requieren consentimiento parental conforme al art. 7 de la LOPDGDD. Si se detecta que se han recogido datos de un menor sin consentimiento, se eliminarán de inmediato.</p>
+  </div>
+
+  <div class="section-block">
+    <h2>10. Seguridad</h2>
+    <ul>
+      <li>Cifrado de comunicaciones mediante HTTPS/TLS.</li>
+      <li>Autenticación gestionada por Supabase Auth.</li>
+      <li>Acceso a datos restringido al mínimo necesario.</li>
+      <li>Almacenamiento cifrado en servidores de Supabase.</li>
+    </ul>
+    <p>En caso de brecha de seguridad que afecte al usuario, se notificará conforme al RGPD.</p>
+  </div>
+
+  <div class="section-block">
+    <h2>11. Modificaciones</h2>
+    <p>bdai se reserva el derecho a actualizar esta política para adaptarla a novedades legislativas o cambios en el servicio. Los cambios relevantes se notificarán a través de la app o por email. La versión vigente estará siempre disponible en <a href="https://www.bdai.travel/privacidad">bdai.travel/privacidad</a>.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <p style="font-size:0.8rem; color:var(--text-3); text-align:center">
+    bdai.travel — better destinations by ai<br>
+    <a href="mailto:info@bdai.travel">info@bdai.travel</a>
+  </p>
+</main>
+
+<footer>
+  <div class="footer-text">
+    © 2026 Daysi Chong Zambrano · bdai.travel ·
+    <a href="https://www.bdai.travel">Volver a la web</a> ·
+    <a href="mailto:info@bdai.travel">Contacto</a>
+  </div>
+</footer>
+
+</body>
+</html>
