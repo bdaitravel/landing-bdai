@@ -1062,32 +1062,101 @@
     }
     .mobile-menu a:last-child { border-bottom: none; color: var(--yellow); }
 
-    /* ─── RESPONSIVE ─── */
+    /* ─── RESPONSIVE TABLET ─── */
     @media (max-width: 1024px) {
       .feat-grid { grid-template-columns: 1fr 1fr; }
       .feat-card.wide { grid-column: 1; }
       .dest-grid { grid-template-columns: 1fr 1fr; }
     }
+
     .team-card[style*="span 2"] { grid-column: span 2; }
+    [style*="grid-column:span 2"],
+    [style*="grid-column: span 2"] { grid-column: span 2; }
+
+    /* ─── RESPONSIVE MÓVIL ─── */
     @media (max-width: 768px) {
-      .team-card[style*="span 2"] { grid-column: span 1; }
-    }
+      /* Nav */
+      .nav-links { display: none; }
       .hamburger { display: flex; }
-      .onboard-layout { grid-template-columns: 1fr; gap: 2.5rem; }
-      .phone-outer { order: -1; }
+      .btn-nav { font-size: 0.78rem; padding: 0.5rem 1rem; }
+      .lang-toggle { display: none; } /* oculto en móvil, accesible desde menú */
+
+      /* Hero */
+      .hero { padding: 6rem 1.25rem 3rem; }
+      .hero-logo { width: 65px; height: 65px; }
+      .hero-badge { font-size: 0.65rem; text-align: center; }
+      .hero-stats { gap: 0.6rem; }
+      .stat-pill { padding: 0.45rem 0.9rem; }
+      .stat-num { font-size: 1rem; }
+      .stat-label { font-size: 0.68rem; }
+      .hero-actions { flex-direction: column; align-items: center; }
+      .hero-actions .btn-primary,
+      .hero-actions .btn-ghost { width: 100%; max-width: 320px; justify-content: center; }
+
+      /* Sections */
+      section { padding: 4rem 1.25rem; }
+      .container { padding: 0; }
+
+      /* How it works */
+      .onboard-layout { grid-template-columns: 1fr; gap: 2rem; }
+      .phone-outer { order: -1; display: flex; justify-content: center; }
+      .phone-card { width: 280px; min-height: 360px; padding: 1.5rem 1.25rem; }
+
+      /* Features */
       .feat-grid { grid-template-columns: 1fr; }
       .feat-card.wide { grid-column: 1; }
-      .dest-grid { grid-template-columns: 1fr 1fr; }
-      .team-grid { grid-template-columns: 1fr; }
+      .bento-card { padding: 1.25rem; }
+      .cat-grid { grid-template-columns: repeat(4, 1fr); gap: 0.4rem; }
+
+      /* Destinations */
+      .dest-head { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .dest-grid { grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+      .dest-card { padding: 1.1rem; }
+      .dest-flag { font-size: 1.4rem; }
+      .dest-name { font-size: 0.85rem; }
+
+      /* News */
       .news-grid { grid-template-columns: 1fr; }
-      .footer-inner { flex-direction: column; text-align: center; }
-      .footer-links { justify-content: center; }
-      .dest-head { flex-direction: column; align-items: flex-start; }
+
+      /* Team */
+      .team-grid { grid-template-columns: 1fr; }
+      .team-card[style*="span 2"] { grid-column: span 1; }
+      [style*="grid-column:span 2"],
+      [style*="grid-column: span 2"] { grid-column: span 1 !important; }
+      .team-card { flex-direction: column; gap: 1rem; }
+      .avatar { width: 48px; height: 48px; }
+
+      /* Partner */
+      .partner-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
+
+      /* CTA */
+      .cta-section { padding: 4rem 1.25rem; }
+      .cta-buttons { flex-direction: column; align-items: center; }
+      .cta-buttons .btn-primary,
+      .cta-buttons .btn-store { width: 100%; max-width: 320px; justify-content: center; }
+
+      /* Footer */
+      .footer-inner { flex-direction: column; text-align: center; gap: 1.25rem; }
+      .footer-links { justify-content: center; flex-wrap: wrap; gap: 1rem; }
+      .footer-logo { justify-content: center; }
     }
+
+    /* ─── RESPONSIVE MÓVIL PEQUEÑO ─── */
     @media (max-width: 480px) {
       .dest-grid { grid-template-columns: 1fr; }
-      .hero-stats { flex-direction: column; align-items: center; }
+      .hero-stats { flex-wrap: wrap; justify-content: center; gap: 0.5rem; }
+      .stat-pill { flex: 0 0 calc(50% - 0.25rem); justify-content: center; }
+      .lang-cloud { gap: 0.3rem; }
+      .lang-tag { font-size: 0.62rem; padding: 0.15rem 0.45rem; }
+      .rank-row { padding: 0.4rem 0.6rem; }
+      .cat-grid { gap: 0.35rem; }
+      .cat-item span { font-size: 0.95rem; }
+      .news-card { padding: 1.25rem; }
+      .team-card { padding: 1.25rem; }
+      .step-row { gap: 1rem; }
+      .phone-outer { display: none; } /* en móvil muy pequeño ocultamos el mockup */
     }
+
     @media (prefers-reduced-motion: reduce) {
       *, .reveal { animation: none !important; transition: none !important; }
       .reveal { opacity: 1; transform: none; }
@@ -1206,7 +1275,7 @@
       <div>
         <div class="eyebrow reveal">Proceso</div>
         <h2 class="section-title reveal">Explora.<br>Descubre. <span class="y">Sorpréndete.</span></h2>
-        <p class="section-body reveal">Elige qué parte de la ciudad te interesa, sigue el mapa a tu ritmo y escucha lo que dai tiene que contarte en cada parada. Sin grupos, sin reservas, sin horarios fijos. Tú marcas el paso.</p>
+        <p class="section-body reveal">Elige qué parte de la ciudad te interesa, sigue el mapa a tu ritmo y escucha lo que Dai tiene que contarte en cada parada. Sin grupos, sin reservas, sin horarios fijos. Tú marcas el paso.</p>
 
         <div class="steps-list" style="margin-top:2.5rem">
           <div class="step-row reveal d1">
@@ -1220,7 +1289,7 @@
             <div class="step-icon g">📍</div>
             <div class="step-content">
               <h4>GPS real — tú decides el ritmo</h4>
-              <p>El mapa te guía entre paradas. Puedes explorar en el orden que quieras según tu tiempo y la zona que te interese. El check-in GPS a menos de 50 metros desbloquea el consejo especial de dai en cada punto.</p>
+              <p>El mapa te guía entre paradas. Puedes explorar en el orden que quieras según tu tiempo y la zona que te interese. El check-in GPS a menos de 50 metros desbloquea el consejo especial de Dai en cada punto.</p>
             </div>
           </div>
           <div class="step-row reveal d3">
@@ -1251,17 +1320,9 @@
             <div class="phone-card-title">Geolocalización</div>
             <div class="phone-card-sub">Check-in Real</div>
             <div class="phone-card-desc">
-              El mapa te muestra todas las paradas. Recórrelas en el orden que quieras. Cuando estás a menos de 50 metros de una parada, el check-in GPS se desbloquea y dai te revela su consejo secreto.
+              El mapa te muestra todas las paradas. Recórrelas en el orden que quieras. Cuando estás a menos de 50 metros de una parada, el check-in GPS se desbloquea y Dai te revela su consejo secreto.
             </div>
-            <div class="phone-dots">
-              <div class="phone-dot"></div>
-              <div class="phone-dot"></div>
-              <div class="phone-dot active"></div>
-              <div class="phone-dot"></div>
-              <div class="phone-dot"></div>
-              <div class="phone-dot"></div>
-              <div class="phone-dot"></div>
-            </div>
+            <!-- sin dots — card estática -->
           </div>
         </div>
       </div>
@@ -1286,9 +1347,28 @@
       <div class="feat-card wide reveal d1">
         <div class="feat-icon y">🌍</div>
         <h3>20 idiomas. Sin excusas.</h3>
-        <p>El mismo tour, tu idioma. Para que ningún viajero llegue a un lugar sin entender qué está mirando.</p>
-        <div class="lang-cloud">
-          <span class="lang-tag">ES</span><span class="lang-tag">EN</span><span class="lang-tag">FR</span><span class="lang-tag">DE</span><span class="lang-tag">IT</span><span class="lang-tag">PT</span><span class="lang-tag">JA</span><span class="lang-tag">ZH</span><span class="lang-tag">AR</span><span class="lang-tag">RU</span><span class="lang-tag">KO</span><span class="lang-tag">NL</span><span class="lang-tag">PL</span><span class="lang-tag">TR</span><span class="lang-tag">SV</span><span class="lang-tag">DA</span><span class="lang-tag">FI</span><span class="lang-tag">HI</span><span class="lang-tag">UK</span><span class="lang-tag">CA</span>
+        <p>El mismo tour, en tu idioma. Para que ningún viajero llegue a un lugar sin entender qué está mirando.</p>
+        <div class="lang-cloud" style="margin-top:1rem">
+          <span class="lang-tag" title="Español">ES · Español</span>
+          <span class="lang-tag" title="English">EN · English</span>
+          <span class="lang-tag" title="Français">FR · Français</span>
+          <span class="lang-tag" title="Deutsch">DE · Deutsch</span>
+          <span class="lang-tag" title="Italiano">IT · Italiano</span>
+          <span class="lang-tag" title="Português">PT · Português</span>
+          <span class="lang-tag" title="日本語">JA · 日本語</span>
+          <span class="lang-tag" title="中文">ZH · 中文</span>
+          <span class="lang-tag" title="العربية">AR · العربية</span>
+          <span class="lang-tag" title="Русский">RU · Русский</span>
+          <span class="lang-tag" title="한국어">KO · 한국어</span>
+          <span class="lang-tag" title="Nederlands">NL · Nederlands</span>
+          <span class="lang-tag" title="Polski">PL · Polski</span>
+          <span class="lang-tag" title="Türkçe">TR · Türkçe</span>
+          <span class="lang-tag" title="Svenska">SV · Svenska</span>
+          <span class="lang-tag" title="Dansk">DA · Dansk</span>
+          <span class="lang-tag" title="Suomi">FI · Suomi</span>
+          <span class="lang-tag" title="हिन्दी">HI · हिन्दी</span>
+          <span class="lang-tag" title="Українська">UK · Українська</span>
+          <span class="lang-tag" title="Català">CA · Català</span>
         </div>
       </div>
 
@@ -1412,13 +1492,13 @@
       <div class="news-card reveal">
         <div class="news-date">Junio 2025</div>
         <div class="news-title">Nace bdai — decisión total</div>
-        <div class="news-body">Tras años viajando a más de 35 países y una etapa en telecomunicaciones, Daisy deja su trabajo y se dedica al 100% a construir bdai. Los primeros tours —Logroño, Granada, Bilbao, Alicante— ya tienen voz propia.</div>
+        <div class="news-body">Con la certeza de que el turismo podía hacerse de otra manera — sin depender de horarios, grupos ni guías — Daisy decide centrarse al 100% en bdai y darle voz propia a cada ciudad. Los primeros tours —Logroño, Granada, Bilbao, Alicante— ya están en marcha.</div>
         <span class="news-chip content">Origen</span>
       </div>
       <div class="news-card reveal d1">
         <div class="news-date">2025 — Validación</div>
-        <div class="news-title">Santander Explorer & la chispa startup</div>
-        <div class="news-body">bdai supera el programa Santander Explorer. La pasión por las startups, encendida en Demium, se convierte en proyecto propio. Un año de construcción, iteración y rutas reales.</div>
+        <div class="news-title">De la idea a la realidad</div>
+        <div class="news-body">Daisy confirma lo que ya intuía: hacer turismo de una forma diferente tiene sentido y viabilidad. La idea es sólida, el producto funciona y los primeros usuarios lo confirman.</div>
         <span class="news-chip launch">Hitos</span>
       </div>
       <div class="news-card reveal d2">
@@ -1436,16 +1516,18 @@
   <div class="container">
     <div class="eyebrow reveal">El equipo</div>
     <h2 class="section-title reveal">Una idea.<br><span class="y">Un mundo.</span></h2>
-    <p class="section-body reveal">bdai nace de haber viajado a más de 35 países y de saber que el turismo puede hacerse de otra manera. Sin folletos, sin grupos, sin depender de que el guía tenga buen día. Financiado con recursos propios, construido desde cero.</p>
+    <p class="section-body reveal">bdai nace de saber que el turismo puede hacerse de otra manera. Sin folletos, sin grupos, sin depender de que el guía tenga buen día. Financiado con recursos propios, construido desde cero.</p>
 
-    <div class="team-grid">
-      <div class="team-card reveal" style="grid-column: span 2;">
-        <div class="avatar" style="width:64px; height:64px; font-size:1.2rem;">DC</div>
-        <div style="flex:1">
+    <div class="team-grid" style="margin-top:2.5rem">
+
+      <!-- Daisy -->
+      <div class="team-card reveal">
+        <div class="avatar">DC</div>
+        <div>
           <div class="team-name">Daisy Chong</div>
-          <div class="team-role">Fundadora · Producto & Contenido</div>
-          <p class="team-bio" style="margin-bottom:1rem">35+ países recorridos. Tras una etapa en Dirección Comercial y Marketing en el sector telco, descubrió su pasión por las startups en el ecosistema Demium y decidió construir su propia idea. En junio de 2025 arrancó bdai al 100%. Un año exacto después, es el lanzamiento. Validada en el programa <strong style="color:var(--text)">Santander Explorer</strong>. Dai no es solo el nombre de la guía — es su nombre.</p>
-          <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+          <div class="team-role">Fundadora · Producto & Marketing</div>
+          <p class="team-bio">Su pasión es viajar. Después de visitar más de 35 países empezó a preguntarse por qué descubrir una ciudad tenía que depender de un grupo, un horario o una barrera de idioma. Con experiencia sólida en marketing y tecnología, decidió en junio de 2025 dedicarse al 100% a construir bdai. Un año después, es el lanzamiento. Dai no es solo el nombre de la guía — es su nombre.</p>
+          <div style="display:flex; gap:0.75rem; flex-wrap:wrap; margin-top:0.75rem;">
             <a href="https://www.daisychong.com" class="team-link" target="_blank" rel="noopener">
               <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               daisychong.com
@@ -1454,33 +1536,34 @@
               <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
               LinkedIn
             </a>
-            <a href="https://www.instagram.com/bdai.travel" class="team-link" target="_blank" rel="noopener" style="color:var(--pink)">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
-              @bdai.travel
-            </a>
           </div>
         </div>
       </div>
+
+      <!-- Javier -->
       <div class="team-card reveal d1">
         <div class="avatar purple-av">JM</div>
         <div>
           <div class="team-name">Javier Martínez</div>
           <div class="team-role p">Líder Técnico · Arquitectura & Seguridad</div>
-          <p class="team-bio">Parte técnica fundamental del proyecto. Lidera la arquitectura, la seguridad y la escalabilidad de la plataforma.</p>
-          <a href="https://www.linkedin.com/in/javier-mart%C3%ADnez-castillejo-6881b779/" class="team-link" target="_blank" rel="noopener">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-            LinkedIn
-          </a>
+          <p class="team-bio">Parte técnica fundamental del proyecto. Lidera la arquitectura, la seguridad y la escalabilidad de la plataforma. Su trabajo es lo que hace que bdai funcione de forma sólida, rápida y fiable en cualquier dispositivo y ciudad del mundo.</p>
+          <div style="margin-top:0.75rem;">
+            <a href="https://www.linkedin.com/in/javier-mart%C3%ADnez-castillejo-6881b779/" class="team-link" target="_blank" rel="noopener">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              LinkedIn
+            </a>
+          </div>
         </div>
       </div>
-      <!-- Validated by -->
-      <div class="reveal d2" style="background:var(--surface); border:1px solid var(--border); border-radius:var(--r); padding:1.5rem; display:flex; flex-direction:column; justify-content:center; gap:0.75rem;">
-        <div class="eyebrow" style="margin-bottom:0">Validado & respaldado</div>
-        <div style="display:flex; gap:1rem; flex-wrap:wrap; align-items:center;">
-          <div style="background:var(--card); border:1px solid var(--border); border-radius:10px; padding:0.5rem 1rem; font-size:0.78rem; color:var(--text-2); font-weight:600;">🎓 Santander Explorer</div>
-          <div style="background:var(--card); border:1px solid var(--border); border-radius:10px; padding:0.5rem 1rem; font-size:0.78rem; color:var(--purple-2); font-weight:600;">🚀 Ecosistema Demium</div>
-        </div>
+
+      <!-- Instagram bdai — pie de sección -->
+      <div class="reveal d2" style="grid-column:span 2; text-align:center; padding:1rem 0 0;">
+        <a href="https://www.instagram.com/bdai.travel" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.5rem; font-size:0.8rem; color:var(--text-3); font-family:'JetBrains Mono',monospace; letter-spacing:0.06em; text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#e84393'" onmouseout="this.style.color='var(--text-3)'">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+          @bdai.travel
+        </a>
       </div>
+
     </div>
   </div>
 </section>
@@ -1520,7 +1603,7 @@
 <!-- ═══ PARTNER ═══ -->
 <section style="background:var(--deep); border-top:1px solid var(--border); padding:4rem 2rem;">
   <div class="container" style="max-width:900px;">
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center;">
+    <div class="partner-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center;">
       <div>
         <div class="eyebrow reveal">¿Trabajamos juntos?</div>
         <h2 class="section-title reveal" style="font-size:clamp(1.6rem,3vw,2.4rem)">bdai para<br><span class="y">partners y marcas</span></h2>
@@ -1564,7 +1647,7 @@
       <li><a href="#equipo">Equipo</a></li>
       <li><a href="https://app.bdai.travel">Ir a la app</a></li>
       <li><a href="mailto:info@bdai.travel?subject=Partner bdai" style="color:var(--yellow)">Ser partner</a></li>
-      <li><a href="#" onclick="document.getElementById('privacy-modal').classList.add('open'); return false;">Privacidad</a></li>
+      <li><a href="/privacidad" target="_blank">Privacidad</a></li>
       <li><a href="mailto:info@bdai.travel">Contacto</a></li>
     </ul>
     <div class="footer-copy">© 2026 Daisy Chong Zambrano · bdai.travel</div>
@@ -1576,7 +1659,7 @@
   <div class="modal-box">
     <button class="modal-close" onclick="document.getElementById('privacy-modal').classList.remove('open')">✕</button>
     <div class="modal-logo">bdai — Política de Privacidad</div>
-    <div class="modal-updated">Última actualización: junio de 2026</div>
+    <div class="modal-updated">Última actualización: junio de 2026 · <a href="/privacidad" target="_blank" style="color:var(--purple-2)">Ver página completa →</a></div>
 
     <div class="modal-h">1. Responsable del tratamiento</div>
     <div class="modal-p">Daysi Chong Zambrano — NIF: 16648955Z<br>Contacto: <a href="mailto:info@bdai.travel">info@bdai.travel</a></div>
@@ -1672,7 +1755,7 @@
       'news-title':     'Lo que está<br>pasando <span class="y">ahora.</span>',
       'team-eyebrow':   'El equipo',
       'team-title':     'Una idea.<br><span class="y">Un mundo.</span>',
-      'team-desc':      'bdai nace de haber viajado a más de 35 países y de saber que el turismo puede hacerse de otra manera. Financiado con recursos propios, construido desde cero.',
+      'team-desc':      'bdai nace de saber que el turismo puede hacerse de otra manera. Sin folletos, sin grupos, sin depender de que el guía tenga buen día. Financiado con recursos propios, construido desde cero.',
       'cta-eyebrow':    'Disponible ahora',
       'cta-title':      'El mundo<br>lleva esperándote<br><span class="y">demasiado.</span>',
       'cta-sub':        'Sin tarjeta. Sin contrato. Sin versión de pago. Para siempre.',
@@ -1713,7 +1796,7 @@
       'news-title':     'What\'s happening <span class="y">right now.</span>',
       'team-eyebrow':   'The team',
       'team-title':     'One idea.<br><span class="y">One world.</span>',
-      'team-desc':      'bdai was born from travelling to 35+ countries and knowing that tourism can be done differently. Self-funded, built from zero.',
+      'team-desc':      'bdai was born from knowing that tourism can be done differently. No brochures, no groups, no depending on whether the guide is having a good day. Self-funded, built from zero.',
       'cta-eyebrow':    'Available now',
       'cta-title':      'The world has been<br>waiting for you<br><span class="y">long enough.</span>',
       'cta-sub':        'No card. No contract. No paid version. Ever.',
